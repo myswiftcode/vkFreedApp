@@ -10,13 +10,33 @@ import UIKit
 import VKSdkFramework
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
 
     var window: UIWindow?
-
+    
+    var authService: AuthService!
+    
+    // Pattern Singleton add 
+    static func shared() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+         VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // init enter AuthViewController
+        window = UIWindow()
+        self.authService = AuthService()
+        authService.myDelegate = self
+        let authVC = UIStoryboard(name: "AuthViewController", bundle: nil).instantiateInitialViewController() as? AuthViewController
+        
+        window?.rootViewController = authVC
+        window?.makeKeyAndVisible()
         return true
     }
 
@@ -40,6 +60,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: AuthServiceDelegate
+    
+    func authServiceShouldShow(_ viewController: UIViewController) {
+        print(#function)
+        // отправляем на страницу входа vk.com/login
+        window?.rootViewController?.present(viewController, animated: true, completion: nil)
+    }
+    
+    func authServiceSignIn() {
+        print(#function)
+    }
+    
+    func authServiceDidSignInFail() {
+        print(#function)
     }
 
 

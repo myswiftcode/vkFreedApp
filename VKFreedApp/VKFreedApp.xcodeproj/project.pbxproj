@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D87A5342233808860070E811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A5341233808860070E811 /* AppDelegate.swift */; };
-		D87A5344233808860070E811 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A5343233808860070E811 /* ViewController.swift */; };
-		D87A5347233808860070E811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87A5345233808860070E811 /* Main.storyboard */; };
 		D87A5349233808870070E811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87A5348233808870070E811 /* Assets.xcassets */; };
 		D87A534C233808870070E811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87A534A233808870070E811 /* LaunchScreen.storyboard */; };
 		D87A535523389B000070E811 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A535423389B000070E811 /* VKSdkFramework.framework */; };
+		D87A53582338AE250070E811 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A53572338AE250070E811 /* AuthService.swift */; };
+		D87A53612338B6CC0070E811 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87A53602338B6CC0070E811 /* AuthViewController.swift */; };
+		D87A53632338B70A0070E811 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87A53622338B70A0070E811 /* AuthViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D87A533E233808860070E811 /* VKFreedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFreedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A5341233808860070E811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D87A5343233808860070E811 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D87A5346233808860070E811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D87A5348233808870070E811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D87A534B233808870070E811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D87A534D233808870070E811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87A535423389B000070E811 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		D87A53572338AE250070E811 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D87A53602338B6CC0070E811 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		D87A53622338B70A0070E811 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,9 @@
 		D87A5340233808860070E811 /* VKFreedApp */ = {
 			isa = PBXGroup;
 			children = (
+				D87A53642338B72F0070E811 /* Auth */,
 				D87A5341233808860070E811 /* AppDelegate.swift */,
-				D87A5343233808860070E811 /* ViewController.swift */,
-				D87A5345233808860070E811 /* Main.storyboard */,
+				D87A53592338AE440070E811 /* Services */,
 				D87A5348233808870070E811 /* Assets.xcassets */,
 				D87A534A233808870070E811 /* LaunchScreen.storyboard */,
 				D87A534D233808870070E811 /* Info.plist */,
@@ -74,6 +76,23 @@
 				D87A535423389B000070E811 /* VKSdkFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D87A53592338AE440070E811 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D87A53572338AE250070E811 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D87A53642338B72F0070E811 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D87A53602338B6CC0070E811 /* AuthViewController.swift */,
+				D87A53622338B70A0070E811 /* AuthViewController.storyboard */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87A534C233808870070E811 /* LaunchScreen.storyboard in Resources */,
+				D87A53632338B70A0070E811 /* AuthViewController.storyboard in Resources */,
 				D87A5349233808870070E811 /* Assets.xcassets in Resources */,
-				D87A5347233808860070E811 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +188,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87A5344233808860070E811 /* ViewController.swift in Sources */,
+				D87A53582338AE250070E811 /* AuthService.swift in Sources */,
+				D87A53612338B6CC0070E811 /* AuthViewController.swift in Sources */,
 				D87A5342233808860070E811 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,14 +197,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D87A5345233808860070E811 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D87A5346233808860070E811 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D87A534A233808870070E811 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
